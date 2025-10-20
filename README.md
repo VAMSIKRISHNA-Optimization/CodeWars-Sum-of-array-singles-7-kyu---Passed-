@@ -19,3 +19,11 @@ mod tests {
         assert_eq!(repeats(&vec![5, 10, 19, 13, 10, 13]), 24);
     }
 }
+
+
+Best Solution:
+use itertools::Itertools;
+
+fn repeats(arr: &Vec<i32>) -> i32 {
+    (2 * arr.iter().unique().sum::<i32>()) - arr.iter().sum::<i32>()
+}
